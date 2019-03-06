@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import pandas as pd
@@ -17,20 +17,20 @@ dataset['Ratio of Sales']=''
 dataset['Ratio of Sales']=spare
 
 
-# In[2]:
+# In[3]:
 
 
 Y['Ratio of Sales']=''
 Y['Ratio of Sales']=spare
 
 
-# In[3]:
+# In[82]:
 
 
 X= dataset.iloc[:,:30]
 
 
-# In[4]:
+# In[83]:
 
 
 abc=[]
@@ -40,20 +40,32 @@ abc.pop()
 abc.append(0)
 
 
-# In[5]:
+# In[84]:
 
 
 Y['Ratio of Sales']=''
 Y['Ratio of Sales']=abc
 
 
-# In[6]:
+# In[85]:
 
 
+X
 
 
+# In[86]:
 
-# In[7]:
+
+Y
+
+
+# In[8]:
+
+
+import math
+
+
+# In[87]:
 
 
 arr1=[]
@@ -68,7 +80,7 @@ for i  in Y['Per Day Sales (in Lakhs)']:
                 
 
 
-# In[8]:
+# In[88]:
 
 
 cat=[]
@@ -82,7 +94,7 @@ for i in cols:
     cat.append(i)
 
 
-# In[12]:
+# In[89]:
 
 
 dic1={}
@@ -96,7 +108,7 @@ for i in Y:
         num+=1        
 
 
-# In[27]:
+# In[139]:
 
 
 import numpy
@@ -107,13 +119,62 @@ for inp1 in dic2:
         
         cat1=dic2[inp1]
         cat2=dic1[inp2]
-        ax=[]
-        ay=[]
+        x=[]
+        y=[]
         for i in X[inp2]:
-            ax.append(i)
+            x.append(i)
         for i in Y[inp1]:
-            ay.append(i)   
-        #final.append(numpy.corrcoef(x, y)[0, 1])  
+            y.append(i)   
+        final.append(numpy.corrcoef(x, y)[0, 1])  
+
+
+# In[140]:
+
+
+final
+
+
+# In[93]:
+
+
+for inp1 in dic2:
+    print(inp1)
+
+
+# In[117]:
+
+
+final1=[]
+
+
+# In[118]:
+
+
+final2=[]
+final3=[]
+
+
+# In[119]:
+
+
+for i in range(0,30):
+    final1.append(final[i])
+for i in range(30,60):
+    final2.append(final[i])
+for i in range(60,90):
+    final3.append(final[i])
+
+
+# In[120]:
+
+
+len(final1+final2+final3)
+
+
+# In[ ]:
+
+
+
 
 
 # In[127]:
@@ -151,5 +212,30 @@ for i in range(len(dic1.keys())):
     df3['Y1']='Per Day Sales (in Lakhs)'
 
 
+# In[135]:
+
+
 finaldf['Pearson']=final
+
+
+# In[136]:
+
+
+len(final)
+
+
+# In[137]:
+
+
+finaldf
+
+
+# In[138]:
+
+
 #finaldf.to_csv('final.csv')
+
+
+
+
+

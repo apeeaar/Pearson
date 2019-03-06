@@ -32,14 +32,6 @@ X= dataset.iloc[:,:30]
 
 # In[83]:
 
-
-abc=[]
-for i in Y['Ratio of Sales']:
-    abc.append(i)
-abc.pop()
-abc.append(0)
-
-
 # In[84]:
 
 
